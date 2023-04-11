@@ -1,0 +1,54 @@
+CREATE TABLE `users` (
+	`user_id` INT NOT NULL AUTO_INCREMENT,
+	`user_firstname` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`user_lastname` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`user_username` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`user_email` VARCHAR(255),
+	`user_password` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`user_registration_date` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	`user_state` INT DEFAULT NULL COMMENT '0: inactive, 10: guest, 20: admin',
+	PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB;
+
+
+CREATE TABLE `food` (
+	`food_id` INT NOT NULL AUTO_INCREMENT,
+	`food_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`food_allergenek` VARCHAR(255) COMMENT 'allergen azonosito felsorolas',
+	`food_osszetevok` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`food_picture` VARCHAR(255) COMMENT 'url',
+	`food_price` FLOAT,
+	`food_category` INT COMMENT 'food_category tabla fog tartalmazni',
+	`food_state` BOOLEAN COMMENT '0:not available, 1: available',
+	PRIMARY KEY (`food_id`)
+) ENGINE=InnoDB;
+
+
+CREATE TABLE `food_category` (
+	`food_cat_id` INT NOT NULL AUTO_INCREMENT,
+	`food_cat_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	`food_cat_state` BOOLEAN,
+	PRIMARY KEY (`food_cat_id`)
+) ENGINE=InnoDB;
+
+
+CREATE TABLE `allergenek` (
+	`allergenek_id` INT NOT NULL AUTO_INCREMENT,
+	`allergenek_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
+	PRIMARY KEY (`allergenek_id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `asztalok` (
+	`asztalok_id` INT NOT NULL AUTO_INCREMENT,
+	`asztalok_ferohely` INT,
+	PRIMARY KEY (`asztalok_id`)
+);
+
+CREATE TABLE `foglalas` (
+	`foglalas_id` INT NOT NULL AUTO_INCREMENT,
+	`foglalas_user_id` INT,
+	`foglalas_asztal_id` INT,
+	`foglalas_idopont` DATETIME,
+	`foglalas_state` INT COMMENT '0: uj foglalas, 1: elutasitva, 2: elfogadva',
+	PRIMARY KEY (`foglalas_id`)
+) ENGINE=InnoDB;
