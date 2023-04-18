@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headerbg-index {
+    background-position: 50% 85%;
+    background-image: url('../pictures/index_background.jpg');
+}
+
+.headerbg-booking {
+    background-position: 50% 30%;
+    background-image: url('../pictures/booking.jpg');
+}
+
+nav {
+    height: 60px;
+    background-color: rgb(0, 0, 0, .5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+}
+
+nav mark {
+    color: white;
+    background: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 0 40px 16px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 18px;
+}
+
+.sign {
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    margin: 0 16px;
+    font-size: large;
+}
+
+main section {
+    margin: auto;
+    padding: 35px 10%;
+}
+
+main section h1 {
+    padding-bottom: 20px;
+}
+
+main .about  {
+    background-color: #F0F0F0;
+}
+
+main .food_container {
+    background-color: #C8C8C8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main .food_container .food_card{
+    background-color: white;
+   width: calc(50% - 16px);
+    margin-bottom: 32px;
+    display: flex;
+}
+
+main .food_container .food_card .food_info{
+    padding: 24px;
+    font-size: 0.8rem;
+    width: 65%;
+}
+
+.food_info h4 {
+    width: 100%;
+    text-align: right;
+}
+
+main .food_container .food_card .food_pic {
+    background-image: url('../pictures/pexels-ash-376464.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 35%;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button_container button {
+    padding: .5rem 0;
+    margin: 0 16px;
+    width: 100px;
+}
